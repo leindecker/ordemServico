@@ -1,0 +1,31 @@
+<div class="panel panel-default" ng-init="visualizarCliente()">
+	<div class="panel-heading">
+	  <p class="panel-title"><span style="color:#5bc0de;"
+class="glyphicon glyphicon-edit"> </span> Editar Cadastro Cliente</p>
+	</div>
+	<div class="panel-body">
+		<form ng-submit="atualizarCliente()">
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input type="text" class="form-control" id="name" ng-model="cliente.nome" value="cliente.nome">
+    </div>
+    <div class="form-group">
+      <label for="dept">Email:</label>
+      <input type="text" class="form-control" id="dept" ng-model="cliente.email" value="cliente.email">
+    </div>
+    <div class="form-group">
+      <label for="area">Endereço:</label>
+      <input type="text" class="form-control" id="area" ng-model="cliente.endereco" value="cliente.endereco">
+    </div>
+    <div class="form-group">
+      <label for="contact">Contato:</label>
+      <input type="text" class="form-control" id="contact" ng-model="cliente.contato" value="cliente.contato">
+      <div class="form-group">
+      <label for="salary">Automovel:</label>
+      <input type="text" class="form-control" id="salary" ng-model="cliente.automovel" value="cliente.automovel">
+    </div>
+    <button type="submit" style="color:#5bc0de;" class="btn btn-default">Atualizar</button>
+    <a href="#/listarClientes" class="btn btn-default"> Voltar</a>
+</form>
+    <div>
+<div>

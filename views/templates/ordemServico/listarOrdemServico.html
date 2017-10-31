@@ -1,0 +1,36 @@
+<div class="panel panel-default" ng-init="getOrdemServico()">
+	<div class="panel-heading">
+	  <p class="panel-title"><span style="color:#5bc0de;"
+class="glyphicon glyphicon-list"> </span> Ordem Serviço</p>
+	</div>
+	<div class="panel-body">
+		<table class="table table-striped table-responsive">
+			<thead>
+			<tr>
+			  <th>Nome</th>
+        <th>Contato</th>
+        <th>Automóvel</th>
+        <th>Serviço Realizado</th>
+				<th>Forma Pagamento</th>
+				<th>Total OS</th>
+			  <th>Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="ordemServico in ordens">
+			  <td>{{ ordemServico.nome }}</td>
+        <td>{{ ordemServico.contato }}</td>
+        <td>{{ ordemServico.automovel }}</td>
+        <td>{{ ordemServico.servico }}</td>
+				<td>{{ ordemServico.pagamento }}</td>
+				<td>{{ ordemServico.total }}</td>
+			  <td>
+			    <a href="#/{{ordemServico._id}}/visualizarOrdemServico" class="btn btn-info"> OS Detalhada  </a>
+			    <a href="#/{{ordemServico._id}}/editarCliente" class="btn btn-success"><span class="glyphicon glyphicon-edit"> </span> Editar  </a>
+			  	<a ng-click="deletarCliente(ordemServico._id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span> Deletar </a>
+			  </td>
+			</tr>
+			</tbody>
+		</table>
+    <div>
+<div>

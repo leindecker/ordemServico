@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp" >
+<head>
+    <% include ../views/partials/title %>
+
+</head>
+<body class="container" >
+
+<header>
+    <% include ../views/partials/navegacao %>
+
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Ordem de Serviço</h1>
+        <p>Emitir OS</p>
+         <ul class="nav nav-pills pull-left">
+			    <li role="presentation" class="active"><a href="#/listarOrdemServico"><span class="glyphicon glyphicon-th-list"> </span> Ordem Serviço</a></li>
+			    <li role="presentation"><a href="#/emitirOrdemServico">
+			    <span class="glyphicon glyphicon-plus"> </span>	Emitir Ordem Serviço</a></li>
+			  </ul>
+        <br>
+        <br>
+        <br>
+        <div ng-view></div>
+    </div>
+</main>
+
+<footer>
+    <% include ../views/partials/rodape %>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="utils/locale.js"></script>
+<script src="utils/rw-money-mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+<link rel="stylesheet" href="../css/datetimepicker.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.0/ui-bootstrap-tpls.js"></script>
+<script src="../dist/datetime-picker.js"></script>
+<!-- <script src="controllers/datetimeController.js"></script>-->
+<script src="app.js"></script>
+<script src="controllers/ordemServicoController.js"></script>
+
+</body>
+</html>

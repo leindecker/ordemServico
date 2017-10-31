@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<form ng-submit="criarOrdemServico()">
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input required type="text" class="form-control" id="name" ng-model="cliente.nome">
+    </div>
+    <div class="form-group">
+      <label for="dept">Email:</label>
+      <input type="text" class="form-control" id="email" ng-model="cliente.email">
+    </div>
+    <div class="form-group">
+      <label for="area">Endereço:</label>
+      <input required type="text" class="form-control" id="endereco" ng-model="cliente.endereco">
+    </div>
+    <div class="form-group">
+      <label for="contact">Contato:</label>
+      <input type="text" class="form-control" id="contato" ng-model="cliente.contato">
+      <div class="form-group">
+      <label for="status">Automóvel :</label>
+      <input required type="text" class="form-control" id="automovel" ng-model="cliente.automovel">
+      <br>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <button type="reset" class="btn btn-default"> Limpar</a>
+</form>
+    <div>
+<div>

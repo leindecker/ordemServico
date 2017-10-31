@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp" >
+<head>
+    <% include ../views/partials/title %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../views/partials/navegacao %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Clientes</h1>
+        <p>Cadastrar clientes</p>
+         <ul class="nav nav-pills pull-left">
+			    <li role="presentation" class="active"><a href="#/listarCliente"><span class="glyphicon glyphicon-th-list"> </span> Listar Clientes</a></li>
+			    <li role="presentation"><a href="#/cadastrarCliente">
+			    <span class="glyphicon glyphicon-plus"> </span>	Adicionar Cliente</a></li>
+			  </ul>
+        <br>
+        <br>
+        <br>
+        <div ng-view></div>
+    </div>
+</main>
+
+<footer>
+    <% include ../views/partials/rodape %>
+</footer>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.0/ui-bootstrap-tpls.js"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<script src="utils/locale.js"></script>
+<script src="utils/rw-money-mask.min.js"></script>
+<link rel="stylesheet" href="../css/datetimepicker.css" />
+<script src="rw-money-mask.min.js"></script>
+<script src="../dist/datetime-picker.js"></script>
+<script src="app.js"></script>
+<script src="controllers/clienteController.js"></script>
+
+</body>
+</html>

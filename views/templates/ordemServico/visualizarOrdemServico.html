@@ -1,0 +1,40 @@
+<div class="panel panel-default" ng-init="visualizarOrdemServico()">
+	<div class="panel-heading">
+	  <p class="panel-title"> Ordem de Serviço Detalhada</p>
+    <button type="button" class="btn btn-default btn-sm">
+      <span class="glyphicon glyphicon-print" aria-hidden="true"></span> Imprimir OS
+    </button>
+    <button type="button" class="btn btn-default btn-sm">
+      <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Gerar PDF
+    </button>
+	</div>
+  <div class="span4 pull-right">
+    <div class="alert alert-danger fade">
+      Funcionalidade não implementada..
+    </div>
+  </div>
+	<div class="panel-body">
+		<form>
+		<div class="form-group" >
+		 <label class="form-control">Nome: {{ ordemServico.nome }}</label>
+		 <label class="form-control">Email: {{ ordemServico.email }}</label>
+		 <label class="form-control">Endereco: {{ ordemServico.endereco }}</label>
+		 <label class="form-control">Contato: {{ ordemServico.contato }}</label>
+		 <label class="form-control">Automovel: {{ ordemServico.automovel }}</label>
+     <label class="form-control">Serviço: {{ ordemServico.servico }}</label>
+     <label class="form-control">Data Entrega Veículo: {{ ordemServico.dataEntrega }}</label>
+     <label class="form-control">Data Retirada Veículo: {{ ordemServico.dataRetirada }}</label>
+     <label class="form-control">Forma de Pagamento da OS: {{ ordemServico.pagamento }}</label>
+     <label class="form-control">Total da OS: {{ ordemServico.total }}</label>
+     <label class="form-control">ID: {{ ordemServico._id }}</label>
+		<a href="#/listarOrdemServico" class="btn btn-default"> Voltar</a>
+		</div>
+	</form>
+    <div>
+<div>
+<script>
+  $(".btn").on("click", function() {
+    $(".alert").removeClass("in").show();
+    $(".alert").delay(200).addClass("in").fadeOut(5000);
+  });
+</script>
