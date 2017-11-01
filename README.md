@@ -11,14 +11,15 @@ Frameworks e API's
    -> Express
    -> AngularJS
    -> NodeJS
+-> Jasmine framework para escrita dos testes end2end
+-> Protractor framework para execução dos testes end2end   
 ```
-### Framework Protractor para a escrita dos testes end2end  
+### Como Inicializar a aplicação localmente  
 
 ### Iniciar o MongoDB service
 ```
 sudo service mongod start
 ```
-
 ### Como instalar e rodar a aplicação
 ```
 -> npm install
@@ -28,9 +29,8 @@ sudo service mongod start
 ```
 -> webdriver-manager start
 ```
-
 ### Como rodar os testes end2end
-Deve estar na pasta end2end
+Deve-se estar na pasta end2end para rodar o comando abaixo
 ```
 -> protractor conf.js --suites XXXX(NOME_SUITE)
 	suites:
@@ -38,3 +38,20 @@ Deve estar na pasta end2end
 	   clientes
 	   ordemServico
 ```
+
+### WEBAPI
+
+GET clientes
+```
+
+http://localhost:8080/api/clientes/
+```
+
+GET Ordem de Servico
+```
+
+http://localhost:8080/api/ordem
+```
+
+Verificar HOSt para
+Suporte a: POST, PUT e DELETE
