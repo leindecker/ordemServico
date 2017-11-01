@@ -12,7 +12,12 @@ Frameworks e API's
    -> AngularJS
    -> NodeJS
 ```
-### Framework Protractor para a escrita dos testes end2end   
+### Framework Protractor para a escrita dos testes end2end  
+
+### Iniciar o MongoDB service
+```
+sudo service mongod start
+```
 
 ### Como instalar e rodar a aplicação
 ```
