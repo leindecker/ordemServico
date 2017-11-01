@@ -1,5 +1,24 @@
+Frameworks Utilizados
+-> Bootstrap
+-> MEAN Stack
+   -> MongoDB
+   -> Express
+   -> AngularJS
+   -> NodeJS
+   
+Framework Protractor para a escrita dos testes end2end   
 
+Como instalar e rodar a aplicação
+-> npm install
+ -> npm start
 
-##Starting the db
+Como rodar o selenium local
+-> webdriver-manager start
 
-    mongod --config /Users/papaj015/_git/node-auth/data/mongodbauth.config
+Como rodar os testes end2end
+Deve estar na pasta end2end
+-> protractor conf.js --suites XXXX(NOME_SUITE)
+	suites:
+	   login
+	   clientes
+	   ordemServico
