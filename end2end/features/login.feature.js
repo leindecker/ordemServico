@@ -62,7 +62,7 @@ describe('Validar Login com credenciais válidas', function () {
     loginPage.clicarEntrar();
   });
 
-  it('Validar mensagem de erro quando a senha é inválida', function () {
+  it('Valida que acessou a aplicação', function () {
     expect(browser.getCurrentUrl()).toEqual('http://localhost:8080/index');
     expect(indexPage.getMenuNavegacaoEl().isDisplayed()).toBe(true);
   });

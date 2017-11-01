@@ -3,11 +3,7 @@ let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 exports.config = {
   framework: 'jasmine2',
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  suites: {
-    login: './features/login.feature.js',
-    cliente: './features/clientes.features.js',
-    ordemServico: './features/ordemServico.features.js'
-  },
+  specs: ['./features/*.feature.js'],
   capabilities: {
     browserName: 'chrome',
     chromeOptions: {

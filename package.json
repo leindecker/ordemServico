@@ -1,5 +1,6 @@
 {
-  "name": "node-authentication",
+  "name": "ordemServico",
+  "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
     "angular": "^1.4.5",
@@ -21,6 +22,7 @@
     "passport-local": "~0.1.6",
     "passport-twitter": "~1.0.2",
     "protractor": "^5.1.2",
-    "jasmine-spec-reporter": "4.2.0"
+    "jasmine-spec-reporter": "4.2.0",
+    "protractor-accessibility-plugin": "^0.1.1"
   }
 }
