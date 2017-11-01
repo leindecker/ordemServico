@@ -1,5 +1,6 @@
 # Frameworks Utilizados
-```-> Bootstrap
+```
+-> Bootstrap
 -> MEAN Stack
    -> MongoDB
    -> Express
@@ -9,16 +10,19 @@
 # Framework Protractor para a escrita dos testes end2end   
 
 # Como instalar e rodar a aplicação
-```-> npm install
+```
+-> npm install
  -> npm start
 ```
 # Como rodar o selenium local
-``` -> webdriver-manager start
+```
+-> webdriver-manager start
 ```
 
 # Como rodar os testes end2end
 Deve estar na pasta end2end
-``` -> protractor conf.js --suites XXXX(NOME_SUITE)
+```
+-> protractor conf.js --suites XXXX(NOME_SUITE)
 	suites:
 	   login
 	   clientes
