@@ -53,6 +53,7 @@ describe('Criar novo cliente', function() {
   });
 
   it('Valida o cliente salvo', function () {
+    browser.wait(ExpectedConditions.visibilityOf(clientesPage.getCLientesGrid()), 4000);
     expect(clientesPage.getRowNomeCliente().getText()).toEqual('Guilherme');
     expect(clientesPage.getRowEnderecoCliente().getText()).toEqual('Rua Damasco 46');
     expect(clientesPage.getRowContatoCliente().getText()).toEqual('190');
