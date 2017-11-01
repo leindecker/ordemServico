@@ -25,6 +25,10 @@ myApp.config(function($routeProvider){
 			templateUrl:'../views/templates/clientes/visualizarCliente.html',
 			controller:'cliController'
 		})
+		.when('/ordemServico/', {
+			templateUrl:'../views/templates/ordemServico/listarOrdemServico.html',
+			controller:'ordemServicoController'
+		})
 		.when('/listarOrdemServico', {
 			templateUrl:'../views/templates/ordemServico/listarOrdemServico.html',
 			controller:'ordemServicoController'
@@ -35,6 +39,10 @@ myApp.config(function($routeProvider){
 		})
 		.when('/:id/visualizarOrdemServico', {
 			templateUrl:'../views/templates/ordemServico/visualizarOrdemServico.html',
+			controller:'ordemServicoController'
+		})
+    .when('/:id/editarOrdemServico', {
+			templateUrl:'../views/templates/ordemServico/editarOrdemServico.html',
 			controller:'ordemServicoController'
 		});
 });

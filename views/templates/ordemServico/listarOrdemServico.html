@@ -11,7 +11,7 @@ class="glyphicon glyphicon-list"> </span> Ordem Serviço</p>
         <th>Contato</th>
         <th>Automóvel</th>
         <th>Serviço Realizado</th>
-				<th>Forma Pagamento</th>
+				<th>Data Retirada</th>
 				<th>Total OS</th>
 			  <th>Actions</th>
 			</tr>
@@ -22,12 +22,12 @@ class="glyphicon glyphicon-list"> </span> Ordem Serviço</p>
         <td>{{ ordemServico.contato }}</td>
         <td>{{ ordemServico.automovel }}</td>
         <td>{{ ordemServico.servico }}</td>
-				<td>{{ ordemServico.pagamento }}</td>
-				<td>{{ ordemServico.total }}</td>
+				<td>{{ ordemServico.dataRetirada | date:'dd/MM/yy' }}</td>
+				<td>{{ ordemServico.total | currency }}</td>
 			  <td>
 			    <a href="#/{{ordemServico._id}}/visualizarOrdemServico" class="btn btn-info"> OS Detalhada  </a>
-			    <a href="#/{{ordemServico._id}}/editarCliente" class="btn btn-success"><span class="glyphicon glyphicon-edit"> </span> Editar  </a>
-			  	<a ng-click="deletarCliente(ordemServico._id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span> Deletar </a>
+			    <a href="#/{{ordemServico._id}}/editarOrdemServico" class="btn btn-success"><span class="glyphicon glyphicon-edit"> </span> Editar  </a>
+			  	<a ng-click="deletarOrdemServico(ordemServico._id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span> Deletar </a>
 			  </td>
 			</tr>
 			</tbody>

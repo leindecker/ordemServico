@@ -1,27 +1,65 @@
-<div class="panel panel-default">
+<div class="panel panel-default" ng-init="visualizarOrdemServico()">
+	<div class="panel-heading">
+	  <p class="panel-title"><span style="color:#5bc0de;"
+class="glyphicon glyphicon-edit"> </span> Editar Ordem Servico</p>
+	</div>
 	<div class="panel-body">
-		<form ng-submit="criarOrdemServico()">
+		<form ng-submit="editarOrdemServico()">
     <div class="form-group">
-      <label for="name">Nome:</label>
-      <input required type="text" class="form-control" id="name" ng-model="cliente.nome">
+      <label for="nome">Nome:</label>
+      <input type="text" class="form-control" id="nome" ng-model="ordemServico.nome" value="cliente.nome">
     </div>
     <div class="form-group">
-      <label for="dept">Email:</label>
-      <input type="text" class="form-control" id="email" ng-model="cliente.email">
+      <label for="email">Email:</label>
+      <input type="text" class="form-control" id="email" ng-model="ordemServico.email" value="ordemServico.email">
     </div>
     <div class="form-group">
-      <label for="area">Endereço:</label>
-      <input required type="text" class="form-control" id="endereco" ng-model="cliente.endereco">
+      <label for="endereco">Endereço:</label>
+      <input type="text" class="form-control" id="endereco" ng-model="ordemServico.endereco" value="ordemServico.endereco">
     </div>
     <div class="form-group">
-      <label for="contact">Contato:</label>
-      <input type="text" class="form-control" id="contato" ng-model="cliente.contato">
-      <div class="form-group">
-      <label for="status">Automóvel :</label>
-      <input required type="text" class="form-control" id="automovel" ng-model="cliente.automovel">
-      <br>
-    <button type="submit" class="btn btn-success">Salvar</button>
-    <button type="reset" class="btn btn-default"> Limpar</a>
+      <label for="contato">Contato:</label>
+      <input type="text" class="form-control" id="contato" ng-model="ordemServico.contato" value="ordemServico.contato">
+    <div class="form-group">
+      <label for="automovel">Automovel:</label>
+      <input type="text" class="form-control" id="automovel" ng-model="ordemServico.automovel" value="ordemServico.automovel">
+    </div>
+    <div class="form-group">
+        <label for="servico">Serviço Realizado</label>
+        <select class="form-control" id="servico" ng-model="ordemServico.servico">
+          <option value="troca de oleo">Troca de Óleo/Filtro</option>
+          <option value="troca de lampada">Troca de Lâmpadas</option>
+          <optionv value="troca de amortecedoes">Troca de Amortecedores</option>
+          <option value="troca de palhetas">Troca de Palhetas</option>
+          <option value="troca de fluido arrefecimento">Troca Fluido Arrefecimento</option>
+          <option value="outros"selected >Outros</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="dataEntrega">Data Entrega</label>
+        <label disabled="disabled" class="form-control">{{ ordemServico.dataEntrega | date:'dd/MM/yy' }}</label>
+    </div>
+    <div class="form-group">
+       <label for="dataEntrega">Data Retirada</label>
+       <label class="form-control" disabled="disabled">{{ ordemServico.dataRetirada | date:'dd/MM/yy' }} </label>
+    </div>
+    <div class="form-group">
+      <label for="pagamento">Forma Pagamento :</label>
+      <select class="form-control" id="pagamento" ng-model="ordemServico.pagamento">
+        <option value ="mastercard">Mastercard</option>
+        <option value="visa">Visa</option>
+        <option value="banricompras">Banricompras</option>
+        <option value="dinheiro">Dinheiro</option>
+        <option value="outros">Outros</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="total">Total OS:</label>
+      <input type="text" class="form-control" id="total" ng-model="ordemServico.total" value="ordemServico.total" money-mask money-mask-prepend="R$">
+    </div>
+  </div>
+    <button type="submit" class="btn btn-success">Atualizar</button>
+    <a href="#/listarOrdemServico" class="btn btn-default"> Voltar</a>
 </form>
     <div>
 <div>

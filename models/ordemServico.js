@@ -7,10 +7,10 @@ var ordemServicoSchema = mongoose.Schema({
       contato: String,
       automovel: String,
       servico: String,
-      dataEntrega: String,
-      dataRetirada: String,
+      dataEntrega: Date,
+      dataRetirada: Date,
       pagamento: String,
-      total: String
+      total: Number
 });
 /*
 var ordemServicoSchema = mongoose.Schema({

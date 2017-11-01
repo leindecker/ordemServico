@@ -22,10 +22,10 @@
 		 <label class="form-control">Contato: {{ ordemServico.contato }}</label>
 		 <label class="form-control">Automovel: {{ ordemServico.automovel }}</label>
      <label class="form-control">Serviço: {{ ordemServico.servico }}</label>
-     <label class="form-control">Data Entrega Veículo: {{ ordemServico.dataEntrega }}</label>
-     <label class="form-control">Data Retirada Veículo: {{ ordemServico.dataRetirada }}</label>
+     <label class="form-control">Data Entrega Veículo: {{ ordemServico.dataEntrega | date:'dd/MM/yy' }}</label>
+     <label class="form-control">Data Retirada Veículo: {{ ordemServico.dataRetirada | date:'dd/MM/yy' }}</label>
      <label class="form-control">Forma de Pagamento da OS: {{ ordemServico.pagamento }}</label>
-     <label class="form-control">Total da OS: {{ ordemServico.total }}</label>
+     <label class="form-control">Total da OS: {{ ordemServico.total | currency }}</label>
      <label class="form-control">ID: {{ ordemServico._id }}</label>
 		<a href="#/listarOrdemServico" class="btn btn-default"> Voltar</a>
 		</div>

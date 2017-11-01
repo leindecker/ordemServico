@@ -11,10 +11,10 @@ var user = require('./models/user.js');
 var clienteModel = require('./models/clientes.js');
 var ordemServicoModel = require('./models/ordemServico.js');
 var configDB = require('./config/database.js');
-// configuration
-mongoose.connect(configDB.url); // connect to our database
 
-localPassport(passport); // pass passport for configuration
+mongoose.connect(configDB.url);
+
+localPassport(passport);
 
 app.configure(function() {
 
@@ -36,7 +36,7 @@ app.configure(function() {
 
 });
 
-// WEB API TESTE
+// WEB API USUARIOS
 app.get('/api/user', function(req, res){
 	user.find(function(err, user){
 		if(err)
@@ -45,6 +45,7 @@ app.get('/api/user', function(req, res){
 	});
 });
 
+// WEB API CLIENTES
 app.get('/api/clientes/:id', function(req, res){
 	clienteModel.findOne({_id:req.params.id}, function(err, clientes){
 		if(err)
@@ -92,6 +93,7 @@ app.delete('/api/clientes/:id', function(req, res){
     });
 });
 
+//WEB API ORDEM SERVICO
 app.get('/api/ordem', function(req, res){
 	ordemServicoModel.find(function(err, os){
 		if(err)
@@ -104,13 +106,40 @@ app.post('/api/ordem/', function(req, res){
 	ordemServicoModel.create( req.body, function(err, os){
 		if(err)
 			res.send(err);
-			console.log('OS', os);
 		res.json(os);
 	});
 });
 
 app.get('/api/ordem/:id', function(req, res){
 	ordemServicoModel.findOne({_id:req.params.id}, function(err, os){
+		if(err)
+			res.send(err);
+		res.json(os);
+	});
+});
+
+app.delete('/api/ordem/:id', function(req, res){
+    ordemServicoModel.findOneAndRemove({_id:req.params.id}, function(err, os){
+      if(err)
+        res.send(err);
+      res.json(os);
+    });
+});
+
+app.put('/api/ordem/:id', function(req, res){
+	var query = {
+		nome:req.body.nome,
+		email:req.body.email,
+		endereco:req.body.endereco,
+		contato:req.body.contato,
+		automovel:req.body.automovel,
+    servico: req.body.servico,
+    dataEntrega: req.body.dataEntrega,
+    dataRetirada: req.body.dataRetirada,
+    pagamento: req.body.pagamento,
+    total: req.body.total
+	};
+	ordemServicoModel.findOneAndUpdate({_id:req.params.id}, query, function(err, os){
 		if(err)
 			res.send(err);
 		res.json(os);
