@@ -32,11 +32,8 @@ sudo service mongod start
 ### Como rodar os testes end2end
 Deve-se estar na pasta end2end para rodar o comando abaixo
 ```
--> protractor conf.js --suites XXXX(NOME_SUITE)
-	suites:
-	   login
-	   clientes
-	   ordemServico
+-> protractor conf.js
+
 ```
 
 ### WEBAPI
