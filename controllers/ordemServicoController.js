@@ -29,4 +29,6 @@ myApp.controller('ordemServicoController', function($scope,$route,$routeParams,$
       $route.reload();
     });
   };
+
+
 });

@@ -1,4 +1,9 @@
-var myApp = angular.module('myApp',['ngRoute',  'rw.moneymask','ui.bootstrap', 'ui.bootstrap.datetimepicker']);
+var myApp = angular.module('myApp',[
+'ngRoute',
+'rw.moneymask',
+'ui.bootstrap',
+'ui.bootstrap.datetimepicker']);
+
 myApp.config(function($routeProvider){
 	$routeProvider
 		.when('/clientes#/', {

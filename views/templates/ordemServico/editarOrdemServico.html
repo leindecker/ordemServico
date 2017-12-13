@@ -14,10 +14,6 @@ class="glyphicon glyphicon-edit"> </span> Editar Ordem Servico</p>
       <input type="text" class="form-control" id="email" ng-model="ordemServico.email" value="ordemServico.email">
     </div>
     <div class="form-group">
-      <label for="endereco">Endereço:</label>
-      <input type="text" class="form-control" id="endereco" ng-model="ordemServico.endereco" value="ordemServico.endereco">
-    </div>
-    <div class="form-group">
       <label for="contato">Contato:</label>
       <input type="text" class="form-control" id="contato" ng-model="ordemServico.contato" value="ordemServico.contato">
     <div class="form-group">
@@ -56,6 +52,15 @@ class="glyphicon glyphicon-edit"> </span> Editar Ordem Servico</p>
     <div class="form-group">
       <label for="total">Total OS:</label>
       <input type="text" class="form-control" id="total" ng-model="ordemServico.total" value="ordemServico.total" money-mask money-mask-prepend="R$">
+    </div>
+    <div class="form-group">
+        <label for="status">Status Ordem Serviço</label>
+          <select class="form-control" id="status" ng-model="ordemServico.status">
+          <option disabled selected value> -- Selecione um Status para a O.S -- </option>
+          <option value="Aberta/Pendente">Aberta/Pendente</option>
+          <option value="Em Servico">Em Serviço</option>
+          <option value="Fechada">Fechada/Finalizada</option>
+        </select>
     </div>
   </div>
     <button type="submit" class="btn btn-success">Atualizar</button>

@@ -10,10 +10,10 @@ class="glyphicon glyphicon-list"> </span> Ordem Serviço</p>
 			  <th>Nome</th>
         <th>Contato</th>
         <th>Automóvel</th>
-        <th>Serviço Realizado</th>
 				<th>Data Retirada</th>
 				<th>Total OS</th>
-			  <th>Actions</th>
+				<th>Status</th>
+			  <th>Ações</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -21,9 +21,9 @@ class="glyphicon glyphicon-list"> </span> Ordem Serviço</p>
 			  <td>{{ ordemServico.nome }}</td>
         <td>{{ ordemServico.contato }}</td>
         <td>{{ ordemServico.automovel }}</td>
-        <td>{{ ordemServico.servico }}</td>
 				<td>{{ ordemServico.dataRetirada | date:'dd/MM/yy' }}</td>
 				<td>{{ ordemServico.total | currency }}</td>
+				<td>{{ ordemServico.status }}</td>
 			  <td>
 			    <a href="#/{{ordemServico._id}}/visualizarOrdemServico" class="btn btn-info"> OS Detalhada  </a>
 			    <a href="#/{{ordemServico._id}}/editarOrdemServico" class="btn btn-success"><span class="glyphicon glyphicon-edit"> </span> Editar  </a>

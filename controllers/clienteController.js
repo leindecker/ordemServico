@@ -4,6 +4,7 @@ myApp.controller('cliController', function($scope,$route,$routeParams,$http){
 			$scope.clientes = response.data;
 		});
 	};
+
 	$scope.visualizarCliente = function(){
 		var id = $routeParams.id;
 		$http.get('/api/clientes/'+ id).then(function(response){

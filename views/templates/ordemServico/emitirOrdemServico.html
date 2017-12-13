@@ -10,27 +10,23 @@
       <input type="text" class="form-control" id="email" ng-model="ordemServico.email">
     </div>
     <div class="form-group">
-      <label for="area">Endereço:</label>
-      <input required type="text" class="form-control" id="endereco" ng-model="ordemServico.endereco">
-    </div>
-    <div class="form-group">
       <label for="contato">Contato:</label>
       <input type="text" class="form-control" id="contato" ng-model="ordemServico.contato">
     </div>
     <div class="form-group">
-      <label for="automovel">Automóvel :</label>
-      <input required type="text" class="form-control" id="automovel" ng-model="ordemServico.automovel">
-    </div>
+   <label for="automovel">Automóvel :</label>
+   <input required type="text" class="form-control" id="automovel" ng-model="ordemServico.automovel">
+  </div>
     <div class="form-group">
-        <label for="servico">Serviço Realizado</label>
-        <select class="form-control" id="servico" ng-model="ordemServico.servico">
-          <option value="troca de oleo">Troca de Óleo/Filtro</option>
-          <option value="troca de lampada">Troca de Lâmpadas</option>
-          <optionv value="troca de amortecedoes">Troca de Amortecedores</option>
-          <option value="troca de palhetas">Troca de Palhetas</option>
-          <option value="troca de fluido arrefecimento">Troca Fluido Arrefecimento</option>
-          <option value="outros"selected >Outros</option>
-        </select>
+     <label for="servico">Serviço Realizado</label>
+     <select class="form-control" id="servico" ng-model="ordemServico.servico">
+       <option value="troca de oleo">Troca de Óleo/Filtro</option>
+       <option value="troca de lampada">Troca de Lâmpadas</option>
+       <optionv value="troca de amortecedoes">Troca de Amortecedores</option>
+       <option value="troca de palhetas">Troca de Palhetas</option>
+       <option value="troca de fluido arrefecimento">Troca Fluido Arrefecimento</option>
+       <option value="outros"selected >Outros</option>
+     </select>
     </div>
     <div ng-controller="DateTimePicker as ctrl">
     <div class="form-group">
@@ -56,8 +52,48 @@
       <label for="total">Total Serviço :</label>
       <input required type="text" class="form-control" id="total" ng-model="ordemServico.total" money-mask money-mask-prepend="R$">
     </div>
+    <div class="form-group">
+        <label for="status">Status Ordem Serviço</label>
+          <select class="form-control" id="status" ng-model="ordemServico.status">
+          <option disabled selected value> -- Selecione um Status para a O.S -- </option>
+          <option value="Aberta/Pendente">Aberta/Pendente</option>
+          <option value="Em Servico">Em Serviço</option>
+          <option value="Fechada">Fechada/Finalizada</option>
+        </select>
+    </div>
       <button type="submit" class="btn btn-success">Salvar</button>
     <button type="reset" class="btn btn-default"> Limpar</a>
 </form>
     <div>
 <div>
+<script>
+$('#cepInput').change(function(){
+  console.log('PASSOU');
+    var cep = $(this).val().replace(/\D*/g,'');
+    if (cep.length != 8) return;
+    $.ajax({
+        url: 'http://cep.republicavirtual.com.br/web_cep.php?cep='+cep+'&formato=json',
+        dataType: 'json',
+        cache: false,
+        beforeSend: function(){
+            // implemente sua animação aqui
+            console.log('processando...');
+        }
+    }).done(function(data){
+        console.log(data);
+        if (data.resultado > 0){
+            $('#enderecoInput').val(data.logradouro);
+            $('#enderecoInput').trigger('input');
+            $('#cidadeInput').val(data.cidade);
+            $('#cidadeInput').trigger('input');
+            $('#bairroInput').val(data.bairro);
+            $('#bairroInput').trigger('input');
+        }
+        else alert('CEP Não Foi Encontrado');
+    }).always(function(){
+       // esconde animação
+       console.log('processo concluído!');
+    });
+});
+
+</script>
