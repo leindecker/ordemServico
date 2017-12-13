@@ -9,10 +9,32 @@
       <label for="dept">Email:</label>
       <input id="emailInput" type="text" class="form-control" id="email" ng-model="cliente.email">
     </div>
+		<div class="form-group">
+			<label for="area">CEP:</label>
+			<input id="cepInput" required type="text" name="cep" class="form-control" id="cep" ng-model="cliente.cep" ng-model='maskModel' mask='99999-999'>
+    </div>
+
+    <fieldset disabled="true">
+
     <div class="form-group">
       <label for="area">Endereço:</label>
-      <input id="enderecoInput" required type="text" class="form-control" id="endereco" ng-model="cliente.endereco">
+      <input id="enderecoInput" type="text" class="form-control" placeholder="Informe o CEP" id="endereco" ng-model="cliente.endereco">
     </div>
+    <div class="form-group">
+      <label for="area">Cidade:</label>
+      <input id="cidadeInput" required type="text" name="cidade" placeholder="Informe o CEP" class="form-control" id="cidade" ng-model="cliente.cidade">
+    </div>
+    <div class="form-group">
+      <label for="area">Bairro:</label>
+      <input id="bairroInput" required type="text" name="bairro" placeholder="Informe o CEP" class="form-control" id="bairro" ng-model="cliente.bairro">
+    </div>
+    </fieldset>
+
+    <div class="form-group">
+      <label for="area">Número:</label>
+      <input id="numeroInput" required type="text" name="numero" class="form-control" id="numero" ng-model="cliente.numero">
+    </div>
+
     <div class="form-group">
       <label for="contact">Contato:</label>
       <input id="contatoInput" type="text" class="form-control" id="contato" ng-model="cliente.contato">
@@ -27,3 +49,33 @@
 </form>
     <div>
 <div>
+<script>
+$('#cepInput').change(function(){
+  console.log('PASSOU');
+    var cep = $(this).val().replace(/\D*/g,'');
+    if (cep.length != 8) return;
+    $.ajax({
+        url: 'http://cep.republicavirtual.com.br/web_cep.php?cep='+cep+'&formato=json',
+        dataType: 'json',
+        cache: false,
+        beforeSend: function(){
+            // implemente sua animação aqui
+            console.log('processando...');
+        }
+    }).done(function(data){
+        console.log(data);
+        if (data.resultado > 0){
+            $('#enderecoInput').val(data.logradouro);
+            $('#enderecoInput').trigger('input');
+            $('#cidadeInput').val(data.cidade);
+            $('#cidadeInput').trigger('input');
+            $('#bairroInput').val(data.bairro);
+            $('#bairroInput').trigger('input');
+        }
+        else alert('CEP Não Foi Encontrado');
+    }).always(function(){
+       // esconde animação
+       console.log('processo concluído!');
+    });
+});
+</script>

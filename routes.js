@@ -7,7 +7,9 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/index', function(req, res) {
-		res.render('index.ejs');
+		res.render('index.ejs', {
+        user : req.user
+    });
 	});
 
   app.get('/clientes', function(req, res) {
@@ -33,6 +35,18 @@ module.exports = function(app, passport) {
 		failureRedirect : '/login', // redirect back to the signup page if there is an error
 		failureFlash : true // allow flash messages
 	}));
+
+  // facebook -------------------------------
+
+      // send to facebook to do the authentication
+      app.get('/auth/facebook', passport.authenticate('facebook', { scope : ['public_profile', 'email'] }));
+
+      // handle the callback after facebook has authenticated the user
+      app.get('/auth/facebook/callback',
+          passport.authenticate('facebook', {
+              successRedirect : '/index',
+              failureRedirect : '/login'
+          }));
 
 	// SIGNUP
 	// show the signup form

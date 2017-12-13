@@ -8,16 +8,14 @@ class="glyphicon glyphicon-list"> </span> Clientes</p>
 			<thead>
 			<tr>
 			  <th>Nome</th>
-			  <th>Endereço</th>
         <th>Contato</th>
         <th>Automóvel</th>
-			  <th>Actions</th>
+			  <th>Ações</th>
 			</tr>
 			</thead>
 			<tbody>
 			<tr ng-repeat="cliente in clientes">
 			  <td id="nomeCliente-ngRepeat">{{ cliente.nome }}</td>
-			  <td id="enderecoCliente-ngRepeat">{{ cliente.endereco }}</td>
         <td id="contatoCliente-ngRepeat">{{ cliente.contato }}</td>
         <td id="automovelCliente-ngRepeat">{{ cliente.automovel }}</td>
 			  <td>

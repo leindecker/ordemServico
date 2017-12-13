@@ -13,9 +13,25 @@ class="glyphicon glyphicon-edit"> </span> Editar Cadastro Cliente</p>
       <label for="dept">Email:</label>
       <input type="text" class="form-control" id="dept" ng-model="cliente.email" value="cliente.email">
     </div>
+		<div class="form-group">
+			<label for="area">CEP:</label>
+			<input type="text" class="form-control" id="cep" ng-model="cliente.cep" value="cliente.cep">
+		</div>
     <div class="form-group">
       <label for="area">Endereço:</label>
-      <input type="text" class="form-control" id="area" ng-model="cliente.endereco" value="cliente.endereco">
+      <input name="endereco" class="form-control" id="endereco" ng-model="cliente.endereco" value="cliente.endereco">
+    </div>
+    <div class="form-group">
+      <label for="area">Cidade:</label>
+      <input name="cidade" class="form-control" id="cidade" ng-model="cliente.cidade" value="cliente.cidade">
+    </div>
+    <div class="form-group">
+      <label for="area">Bairro:</label>
+      <input name="bairro" class="form-control" id="bairro" ng-model="cliente.bairro" value="cliente.bairro">
+    </div>
+    <div class="form-group">
+      <label for="area">Número:</label>
+      <input name="numero" class="form-control" id="numero" ng-model="cliente.numero" value="cliente.numero">
     </div>
     <div class="form-group">
       <label for="contact">Contato:</label>
