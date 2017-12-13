@@ -38,13 +38,15 @@ describe('Criar novo cliente', function() {
   it('Preenche campos para adicionar clientes', function () {
     adicionaClientesPage.preencheNomeInput('Guilherme');
     adicionaClientesPage.preencheEmailInputEl('leindecker.guilherme@gmail.com');
-    adicionaClientesPage.preencheEnderecoInputEl('Rua Damasco 46');
+    adicionaClientesPage.preencheCepInput('90480000');
+    adicionaClientesPage.preencheNumeroInput('190');
     adicionaClientesPage.preencheContatoInputEl('190');
     adicionaClientesPage.preencheAutomovelInputEl('VW Fusca');
   });
 
   it('Clica em Salvar para cadastrar Cliente', function () {
     adicionaClientesPage.salvar();
+    browser.sleep(1300);
   });
 
   it('Clica em Listar Clientes', function () {
@@ -55,7 +57,6 @@ describe('Criar novo cliente', function() {
   it('Valida o cliente salvo', function () {
     browser.wait(ExpectedConditions.visibilityOf(clientesPage.getCLientesGrid()), 4000);
     expect(clientesPage.getRowNomeCliente().getText()).toEqual('Guilherme');
-    expect(clientesPage.getRowEnderecoCliente().getText()).toEqual('Rua Damasco 46');
     expect(clientesPage.getRowContatoCliente().getText()).toEqual('190');
     expect(clientesPage.getRowAutomovelCliente().getText()).toEqual('VW Fusca');
   });

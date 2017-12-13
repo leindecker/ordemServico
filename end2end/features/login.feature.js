@@ -41,7 +41,7 @@ describe('Validar Login com senha inválida', function () {
   });
 
   it('Validar mensagem de erro quando a senha é inválida', function () {
-    expect(loginPage.getMensagemErro()).toEqual('Oops! Senha Inválida.');
+    expect(loginPage.getMensagemErro()).toEqual('Oops! Senha Incorreta.');
   });
 });
 

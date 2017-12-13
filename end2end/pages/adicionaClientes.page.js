@@ -3,6 +3,8 @@ var AdicionaClientesPage = function() {
   var nomeInputEl = element(by.id('nomeInput'));
   var emailInputEl = element(by.id('emailInput'));
   var enderecoInputEl = element(by.id('enderecoInput'));
+  var cepInput = element(by.id('cepInput'));
+  var numeroInput = element(by.id('numeroInput'));
   var contatoInputEl = element(by.id('contatoInput'));
   var automovelInputEl = element(by.id('automovelInput'));
   var salvarBtn = element(by.id('salvarBtn'));
@@ -15,9 +17,17 @@ var AdicionaClientesPage = function() {
     return salvarBtn.click();
   }
 
+  this.preencheNumeroInput = function(numero) {
+    return numeroInput.sendKeys(numero);
+  };
+
   this.preencheNomeInput = function(nome) {
     return nomeInputEl.sendKeys(nome);
   };
+
+  this.preencheCepInput = function(cep) {
+    return cepInput.sendKeys(cep);
+  }
 
   this.preencheEmailInputEl = function(email) {
     return emailInputEl.sendKeys(email)
